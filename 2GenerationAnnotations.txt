@@ -1,0 +1,118 @@
+2 Generation Annotations
+
+Aplicação Brasil:
+D:\ThomsonReuters\OSGT\Login --> OSGTLogin.EXE
+
+Aplicação International:
+D:\ThomsonReuters\OSGTInter\Login --> OSGTLogin.EXE
+
+Senha e user acessar a aplicação:
+ADM/swadm
+jocimar/jocimar
+
+Caminho para baixar os pacotes:
+\\10.197.67.106\Produto\
+\\10.197.67.106\Produto\FactorySYS\PACOTES_DE_TESTES
+Usuário: SOFTWAYSA\dinunes
+Senha: DiNu@2018!
+Usuário: SOFTWAYSA\jocimar.daniel
+Senha: Jc367#dn
+
+Banco de dados Brasil:
+Nome de usuário: SFWISV12RM
+Senha: SFWISV12RM
+TNS: ORA12UTF8TST
+
+Bases:
+SFWV12RM - Base Generica
+SFWISV12RM - Base Import Brasil
+SFWDBV12RM - Drawback
+SFWIOV12RM - In Out
+
+Base Internacional:
+TRRM/RM2017/ORA12UTF8TST - Base Generica Internacional
+STRRM/TRRM/ORA12UTF8TST - Usuário Sombra Base Generica Internacional
+TRISARRM/TRISARRM/ORA12UTF8TST - Base Import Argentina Internacional
+TRISMXRM/RMISMX2017/ORA12UTF8TST - Base Import México Internacional RMISMXRM2017
+TRESARRM/RMESAR2017/ORA12UTF8TST - Base Export Argentina Internacional
+TRIORM/RMIO2017/ORA12UTF8TST - Base In Out
+TRISCLRM/TRISCLRM/ORA12UTF8TST - Base Chile
+
+Usuário de Acesso base RM
+UX013250/
+
+RMAR2017
+Usuário 3gen:
+/Jocimar@123
+
+Base SFWISV12RM: Import Brasil
+CREATE OR REPLACE SYNONYM LOG_ALTER_SFW_GRUPO FOR SFWV12RM.LOG_ALTER_SFW_GRUPO;
+CREATE OR REPLACE SYNONYM INFORMANTES FOR sfwv12rm.SFW_INFORMANTE;
+grant all on LOG_ALTER_SFW_GRUPO to RSFWV12RM;
+grant all on LOG_ALTER_SFW_GRUPO to RSFWV12RM;
+
+Base SFWV12RM: Base
+grant all on SFW_INFORMANTE to SFWISV12RM;
+grant all on LOG_ALTER_SFW_GRUPO to SFWISV12RM;
+
+
+Para o teste da história http://ent.jira.int.thomsonreuters.com/browse/OSGTG-18440
+O Caminho da aplicação é:
+Import > Dados Mestres > Segurança > Grupos
+
+Para o teste da história: http://ent.jira.int.thomsonreuters.com/browse/OSGTG-18442
+Módulo Broker sys : Broker > Dados Mestres > Segurança > Grupos
+e para o Broker NF : Processo de Importação > Módulo de Nota Fiscal > Dados Mestres > Segurança > Grupos
+
+Para renovar o licenciamento:
+select * from SFW_LICENCIAMENTO for update;
+e deletar a linha da tabela.
+
+
+DELETE FROM SFW_LICENCIAMENTO
+WHERE condition;
+
+
+
+Processo quando o ticket é do tipo HF (Hot Fix):
+Testar e apos validado enviar o pacote para o cliente via Send this File: https://thomsonreuters.sendthisfile.com
+Com copia para os funcionais e para o Vera
+
+jocimar.daniel@thomsonreuters.com;
+luiz.vera@thomsonreuters.com;
+cleide.andrade@thomsonreuters.com;
+kelly.goncalves@thomsonreuters.com;
+Geraldo.Matonti@thomsonreuters.com; 
+V.Camargo@thomsonreuters.com
+vinicius.neves@thomsonreuters.com;
+denis.silva@thomsonreuters.com;
+angelo.volpi@thomsonreuters.com;
+
+igor.cezar@thomsonreuters.com;
+
+
+
+Minha base:
+
+
+https://teams.microsoft.com/l/team/19%3ac421426114c74853a5b0ae98a043cdf9%40thread.skype/conversations?groupId=ea38e964-95ed-48ec-ad99-f4f073d40467&tenantId=62ccb864-6a1a-4b5d-8e1c-397dec1a8258
+
+Tabela atualizar a versão via banco:
+select * from sfw_sistema_versao v 
+where v.cod_sistema = 308 
+and v.s_commercial_version = '3.0.0' for update;
+
+Para descobrir nomes das telas abrir:
+labels_objetos.ini
+
+
+Base Homologação:
+user:TROGTINTHM
+senha:INTHM
+Tns: ORA12UTF8TST
+#############BASE ORACLE 12###############
+ORA12UTF8TST=(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.197.67.101)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = ORA12UTF8TST)))
+
+
+
+TRESMXOSGTINTTST/TRESMXOSGTINTTST
